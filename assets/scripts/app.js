@@ -6,6 +6,10 @@
         this.products = gems;
       });
 
+      app.controller('PanelController', function(){
+        this.tab = 1;
+      });
+
 
       // #1
       // var gem = {
