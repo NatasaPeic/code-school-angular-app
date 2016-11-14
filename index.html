@@ -94,7 +94,7 @@
 
 
 
-                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
+                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
                     <blockquote>
                        <b> {{reviewCtrl.review.stars}} Stars</b>
                        <br>
