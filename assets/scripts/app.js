@@ -26,6 +26,10 @@
         };
       });
 
+      app.controller('ReviewController', function(){
+        this.review = {};
+      })
+
 
       // #1
       // var gem = {
