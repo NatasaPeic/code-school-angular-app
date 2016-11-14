@@ -21,8 +21,12 @@
         <div class="row">
 
             <div ng-show="product.images.length" ng-repeat = "product in store.products" class="col-lg-12 text-center">
+              <!-- taken out and placed within product-title.html
                 <h1>{{product.name}}</h1>
                 <p class="lead">{{product.price | currency}}</p>
+              -->
+
+              <h3 ng-include="'product-title.html'"></h3>
                 <!-- <button ng-show="store.product.canPurchase" type="button" class="btn btn-outline-info">Info</button> -->
 
             <div ng-controller="GalleryController as gallery" ng-show="product.images.length" class="col-lg-12 text-center">
@@ -94,7 +98,7 @@
 
 
 
-                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)" novalidate>
+                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                     <blockquote>
                        <b> {{reviewCtrl.review.stars}} Stars</b>
                        <br>
@@ -130,13 +134,6 @@
 
 
                 </form>
-
-
-
-
-
-
-
 
           </section>
 
