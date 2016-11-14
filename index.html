@@ -94,7 +94,7 @@
 
 
 
-                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)" novalidate>
+                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                     <blockquote>
                        <b> {{reviewCtrl.review.stars}} Stars</b>
                        <br>
@@ -121,7 +121,7 @@
                     </fieldset>
 
                     <fieldset class="form-group">
-                      <div> reviewForm is {{reviewForm.$valid}} </div>
+
                     <input class="form-control" type="submit" name="name" value="Submit">
                     </fieldset>
 
