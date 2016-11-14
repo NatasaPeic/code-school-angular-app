@@ -94,7 +94,7 @@
 
 
 
-                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)" novalidate>
                     <blockquote>
                        <b> {{reviewCtrl.review.stars}} Stars</b>
                        <br>
@@ -106,21 +106,22 @@
                     <h4>Submit a Review</h4>
                     <fieldset class="form-group">
 
-                    <select class="form-control" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">
+                    <select class="form-control" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" required>
                       <option value="">Rate this product</option>
                     </select>
                     </fieldset>
 
 
                     <fieldset class="form-group">
-                    <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review" name="name" rows="8" cols="40"></textarea>
+                    <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review" name="name" rows="8" cols="40" required></textarea>
                   </fieldset>
 
                     <fieldset class="form-group">
-                    <input ng-model="rreviewCtrl.eview.author" class="form-control" type="email" placeholder="jimmyDean@example.org" title="Email"  />
+                    <input ng-model="rreviewCtrl.eview.author" class="form-control" type="email" placeholder="jimmyDean@example.org" title="Email"  required />
                     </fieldset>
 
                     <fieldset class="form-group">
+                      <div> reviewForm is{{reviewForm.$valid}} </div>
                     <input class="form-control" type="submit" name="name" value="Submit">
                     </fieldset>
 
