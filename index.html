@@ -26,6 +26,12 @@
 
                 <img ng-src="{{product.images[0]}}" />
 
+                <ul class="list-unstyled">
+                   <li class = "thumbnail" ng-repeat="image in product.images">
+                   <img ng-src="{{image}}" />
+                   </li>
+               </ul>
+
             </div>
         </div>
         <!-- /.row -->

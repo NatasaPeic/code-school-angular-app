@@ -91,7 +91,7 @@
      images: [
        "assets/scripts/images/gem-06.gif",
        "assets/scripts/images/gem-07.gif",
-       "assets/scripts/images/gem-10.gif"
+       "assets/scripts/images/gem-09.gif"
      ],
      reviews: [{
        stars: 1,
