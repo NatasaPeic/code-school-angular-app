@@ -32,6 +32,10 @@
                    </li>
                </ul>
 
+
+
+            <!-- demonstration purposes
+
             <section>
                <ul class="nav nav-pills">
                   <li><a href ng-click="tab = 1">Description </a> </li>
@@ -40,6 +44,40 @@
               </ul>
               {{tab}}
             </section>
+
+          -->
+
+
+            <section>
+               <ul class="nav nav-pills">
+                  <li><a href ng-click="tab = 1">Description </a> </li>
+                  <li><a href ng-click="tab = 2">Specification</a>  </li>
+                  <li><a href ng-click="tab = 3">Reviews</a>  </li>
+              </ul>
+
+            </section>
+
+
+          <div class="row" ng-show="tab === 1">
+            <h4>Description</h4>
+              <p>
+                {{product.description}}
+              </p>
+          </div>
+
+          <div class="row" ng-show="tab === 2">
+            <h4>Specifications</h4>
+              <p>
+                Not yet
+              </p>
+          </div>
+
+          <div class="row" ng-show="tab === 3">
+            <h4>Reviews</h4>
+              <p>
+                Not yet
+              </p>
+          </div>
 
             </div>
         </div>
