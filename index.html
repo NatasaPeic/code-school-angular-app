@@ -85,11 +85,55 @@
                 <div class="row" ng-show="panel.isSelected(3)">
                   <blockquote ng-repeat="review in product.reviews">
                      <b> Stars: {{review.stars}}</b>
+                   <br>
                      {{review.body}}
+                     <br>
                      <cite>by: {{review.author}}</cite>
                   </blockquote>
-
                 </div>
+
+
+
+                <form name="reviewForm">
+                    <blockquote>
+                       <b> {{review.stars}} Stars</b>
+                       <br>
+                     {{review.body}}
+                       <br>
+                       <cite>-{{review.author}}</cite>
+                    </blockquote>
+
+                    <h4>Submit a Review</h4>
+                    <fieldset class="form-group">
+
+                    <select class="form-control" ng-model="review.stars" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">
+                      <option value="">Rate this product</option>
+                    </select>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                    <textarea ng-model="review.body" class="form-control" placeholder="Write a short review of the product..." title="Review" name="name" rows="8" cols="40"></textarea>
+                  </fieldset>
+
+                    <fieldset class="form-group">
+                    <input ng-model="review.author" class="form-control" type="email" placeholder="jimmyDean@example.org" title="Email"  />
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                    <input class="form-control" type="submit" name="name" value="Submit">
+                    </fieldset>
+
+
+
+                </form>
+
+
+
+
+
+
+
 
           </section>
 
