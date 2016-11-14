@@ -94,7 +94,7 @@
 
 
 
-                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)" novalidate>
                     <blockquote>
                        <b> {{reviewCtrl.review.stars}} Stars</b>
                        <br>
@@ -102,6 +102,8 @@
                        <br>
                        <cite>-{{reviewCtrl.review.author}}</cite>
                     </blockquote>
+
+
 
                     <h4>Submit a Review</h4>
                     <fieldset class="form-group">
@@ -117,7 +119,7 @@
                   </fieldset>
 
                     <fieldset class="form-group">
-                    <input ng-model="rreviewCtrl.eview.author" class="form-control" type="email" placeholder="jimmyDean@example.org" title="Email"  required />
+                    <input ng-model="reviewCtrl.review.author" class="form-control" type="email" placeholder="jimmyDean@example.org" title="Email"  required />
                     </fieldset>
 
                     <fieldset class="form-group">
