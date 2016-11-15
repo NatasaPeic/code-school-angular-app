@@ -43,6 +43,12 @@
        };
      });
 
+     app.directive('productSpecs', function(){
+        return{
+          restrict: 'A',
+          templateUrl: 'product-specs.html'
+        };
+      });
 
       // #1
       // var gem = {
