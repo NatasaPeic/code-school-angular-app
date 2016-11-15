@@ -1,0 +1,108 @@
+<section ng-controller="PanelController as panel">
+   <ul class="nav nav-pills">
+      <li ng-class="{ active: panel.isSelected(1)}">
+        <a href ng-click="panel.selectTab(1)">Description </a> </li>
+
+      <li ng-class="{ active: panel.isSelected(2)}">
+        <a href ng-click="panel.selectTab(2)">Specification</a>  </li>
+
+      <li ng-class="{ active: panel.isSelected(3)}">
+        <a href ng-click="panel.selectTab(3)">Reviews</a>  </li>
+  </ul>
+
+  <!-- demonstration purposes
+
+  <section>
+     <ul class="nav nav-pills">
+        <li><a href ng-click="tab = 1">Description </a> </li>
+        <li><a href ng-click="tab = 2">Specification</a>  </li>
+        <li><a href ng-click="tab = 3">Reviews</a>  </li>
+    </ul>
+    {{tab}}
+  </section>
+
+-->
+
+
+
+
+    <!-- insead of using ng-include, use custom directive
+    <div class="row" ng-show="panel.isSelected(1)" ng-include="'product-description.html'">
+    -->
+
+      <product-description ng-show="panel.isSelected(1)"></product-description>
+      <!-- taken out and placed within product-description.html
+
+      <h4>Description</h4>
+        <p>
+          {{product.description}}
+        </p>
+
+      -->
+
+
+
+
+      <div product-specs ng-show="panel.isSelected(2)">
+
+        <!-- taken out and placed within product-specs.html
+        <h4>Specifications</h4>
+          <p> Shine:
+            {{product.shine}}
+          </p>
+        -->
+      </div>
+
+
+
+
+    <div class="row" ng-show="panel.isSelected(3)">
+      <blockquote ng-repeat="review in product.reviews">
+         <b> Stars: {{review.stars}}</b>
+       <br>
+         {{review.body}}
+         <br>
+         <cite>by: {{review.author}}</cite>
+      </blockquote>
+    </div>
+
+
+
+    <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+        <blockquote>
+           <b> {{reviewCtrl.review.stars}} Stars</b>
+           <br>
+         {{reviewCtrl.review.body}}
+           <br>
+           <cite>-{{reviewCtrl.review.author}}</cite>
+        </blockquote>
+
+
+
+        <h4>Submit a Review</h4>
+        <fieldset class="form-group">
+
+        <select class="form-control" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" required>
+          <option value="">Rate this product</option>
+        </select>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+        <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review" name="name" rows="8" cols="40" required></textarea>
+      </fieldset>
+
+        <fieldset class="form-group">
+        <input ng-model="reviewCtrl.review.author" class="form-control" type="email" placeholder="jimmyDean@example.org" title="Email"  required />
+        </fieldset>
+
+        <fieldset class="form-group">
+
+        <input class="form-control" type="submit" name="name" value="Submit">
+        </fieldset>
+
+
+
+    </form>
+
+</section>
