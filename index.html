@@ -21,10 +21,9 @@
         <div class="row">
 
             <div ng-show="product.images.length" ng-repeat = "product in store.products" class="col-lg-12 text-center">
-              <!-- taken out and placed within product-title.html
                 <h1>{{product.name}}</h1>
                 <p class="lead">{{product.price | currency}}</p>
-              -->
+
 
               <h3 ng-include="'product-title.html'"></h3>
                 <!-- <button ng-show="store.product.canPurchase" type="button" class="btn btn-outline-info">Info</button> -->
@@ -70,11 +69,16 @@
 
 
 
-                <div class="row" ng-show="panel.isSelected(1)">
+                <div class="row" ng-show="panel.isSelected(1)" ng-include="'product-description.html'">
+                  <!-- taken out and placed within product-description.html
+
                   <h4>Description</h4>
                     <p>
                       {{product.description}}
                     </p>
+
+                  -->
+
                 </div>
 
                 <div class="row" ng-show="panel.isSelected(2)">
