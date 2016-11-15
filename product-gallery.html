@@ -1,0 +1,9 @@
+<div ng-controller="GalleryController as gallery" ng-show="product.images.length" class="col-lg-12 text-center">
+    <img ng-src="{{product.images[gallery.current]}}" />
+
+    <ul class="list-unstyled">
+       <li class = "thumbnail" ng-repeat="image in product.images">
+       <img ng-src="{{image}}" />
+       </li>
+   </ul>
+ </div>

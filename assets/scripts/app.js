@@ -77,6 +77,20 @@
 
        });
 
+       app.directive('productGallery', function(){
+          return {
+            restrict: 'E',
+            templateUrl: 'product-gallery.html',
+            controller: function(){
+              this.current = 0;
+
+              this.setCurrent = function(value) {
+                this.current = value || 0;
+              };
+            }
+          };
+        });
+
       // #1
       // var gem = {
       //   name: 'Azurite',

@@ -28,21 +28,14 @@
               <h3 ng-include="'product-title.html'"></h3>
                 <!-- <button ng-show="store.product.canPurchase" type="button" class="btn btn-outline-info">Info</button> -->
 
-            <div ng-controller="GalleryController as gallery" ng-show="product.images.length" class="col-lg-12 text-center">
-                <img ng-src="{{product.images[gallery.current]}}" />
+             <!-- div tag moved entirely within product-gallery.html -->
 
-                <ul class="list-unstyled">
-                   <li class = "thumbnail" ng-repeat="image in product.images">
-                   <img ng-src="{{image}}" />
-                   </li>
-               </ul>
-             </div>
-
-             <!-- section tab moved entirely within product-tabs.html -->
+             <!-- section tag moved entirely within product-tabs.html -->
+             
              <!-- rest is moved withing product-reviews.html -->
 
              <product-tabs></product-tabs>
-             
+
             </div>
         </div>
         <!-- /.row -->
