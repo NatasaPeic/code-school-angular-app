@@ -50,6 +50,23 @@
         };
       });
 
+      app.directive('productTabs', function(){
+         return {
+           restrict: 'E',
+           templateUrl: 'product-tabs.html',
+           controllers: function(){
+             this.selectTab = function(setTab){
+               this.tab = setTab;
+             };
+
+             this.isSelected = function(checkTab){
+               return this.tab === checkTab;
+             };
+              controllerAs: 'tab'
+           }
+         };
+       });
+
       // #1
       // var gem = {
       //   name: 'Azurite',
