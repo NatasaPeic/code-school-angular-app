@@ -73,7 +73,7 @@
                 <div class="row" ng-show="panel.isSelected(1)" ng-include="'product-description.html'">
                 -->
 
-                  <product-description ng-show="tab.isSet(1)"></product-description>
+                  <product-description ng-show="panel.isSelected(1)"></product-description>
                   <!-- taken out and placed within product-description.html
 
                   <h4>Description</h4>
@@ -86,7 +86,7 @@
 
 
 
-                  <div product-specs ng-show="tab.isSet(2)">
+                  <div product-specs ng-show="panel.isSelected(2)">
 
                     <!-- taken out and placed within product-specs.html
                     <h4>Specifications</h4>
@@ -95,7 +95,7 @@
                       </p>
                     -->
                   </div>
-                
+
 
 
 
