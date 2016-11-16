@@ -1,3 +1,4 @@
+<!-- take ng-controller out, it is within tabs controller directive -->
 <section >
    <ul class="nav nav-pills">
       <li ng-class="{ active: panel.isSelected(1)}">
@@ -11,10 +12,13 @@
   </ul>
 
 
+        <!--  Product Tab's Content  -->
+        <product-description ng-show="panel.isSelected(1)"></product-description>
 
-
-  <div ng-show="panel.isSelected(1)" ng-include="'product-description.html'">
-         </div>
+        <!-- instead of ng-include, use custom element directive
+            <div ng-show="panel.isSelected(1)" ng-include="'product-description.html'">
+            </div>
+        -->
 
          <!--  Spec Tab's Content  -->
          <div product-specs ng-show="panel.isSelected(2)"></div>
