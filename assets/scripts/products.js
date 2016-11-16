@@ -1,3 +1,5 @@
+// product related direcives
+
 (function() {
   var app = angular.module('store-directives', []);
   app.directive('productDescription', function(){
